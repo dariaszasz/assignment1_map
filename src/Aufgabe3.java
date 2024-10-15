@@ -45,5 +45,29 @@ public class Aufgabe3 {
         return result;
     }
 
+    // 3.Inmultirea unui numar mare cu o cifra
+    public int[] multiply_big_numbers(int[] num1, int multiplier) {
+        int[] result = new int[num1.length + 1];// Cream un array de rezultat care poate avea o cifra in plus din cauza carry-ului
+        int carry = 0; // Variabila pt transport
+
+        // Incepem de la ultima cifra a numarului
+        for (int i = num1.length - 1; i >= 0; i--) {
+            int product = num1[i] * multiplier + carry; // Inmultim cifra curenta si adaugam carry-ul
+            result[i + 1] = product % 10; // Stocam cifra unitatilor
+            carry = product / 10; // Calculam carry-ul
+        }
+
+        result[0] = carry;// Stocam transportul ramas pe prima poz
+
+        // Daca nu avem transport returnam array-ul fara prima poz
+        if (result[0] == 0) {
+            int[] finalResult = new int[num1.length];
+            System.arraycopy(result, 1, finalResult, 0, num1.length); // Copiem datele
+            return finalResult; // Returnam rezultatul fara cifra suplimentara
+        }
+
+        return result;
+    }
+
 
 }

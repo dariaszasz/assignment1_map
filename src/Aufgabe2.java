@@ -28,6 +28,19 @@ public class Aufgabe2 {
         return min;
     }
 
+    // 3.Metoda pt gasirea sumei maxima a n-1 numere
+    public int findMaxSum() {
+        int sum = 0;
+        int min = min_nr(); // Gasirea numarului cel mai mic folosind metoda de mai sus
+
+        for (int num : numbers) {
+            sum += num;
+        }
+
+        // Suma maxima = Suma totala - cel mai mic numar
+        return sum - min;
+    }
+
 
 
 }

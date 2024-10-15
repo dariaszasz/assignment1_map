@@ -69,5 +69,21 @@ public class Aufgabe3 {
         return result;
     }
 
+    // 4.Impartirea unui numar mare la o cifra
+    public int[] divide_big_numbers(int[] num1, int divisor) {
+        int[] result = new int[num1.length];// Cream un array pt rezultat
+        int remainder = 0; // Variabila pt restul impartirii
+
+        // Incepem de la prima cifra
+        for (int i = 0; i < num1.length; i++) {
+            // Calculam cifra curenta tinand cont de restul anterior
+            int current = remainder * 10 + num1[i];
+            result[i] = current / divisor; // Stocam catul impartirii
+            remainder = current % divisor; // Calculam noul rest
+        }
+
+        return result;
+    }
+
 
 }

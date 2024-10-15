@@ -7,7 +7,7 @@ public class Aufgabe1{
     }
 
     // 1. Metoda pentru notele insuficiente (sub 40)
-    public int[] getFailingGrades() {
+    public int[] note_insuficiente() {
         // Calculăm numărul de note insuficiente
         int count = 0;
         for (int grade : grades) {
@@ -62,6 +62,50 @@ public class Aufgabe1{
         return roundedGrades;
     }
 
+    // 4. Metoda pt obtinerea notei maxime rotunjite
+    public int maxim_rotunjit() {
+        int[] roundedGrades = rotunjire();// Apelam metoda rotunjire() pt a obtine array-ul cu notele rotunjite
+        if (roundedGrades.length == 0) {// Verificam daca array-ul roundedGrades este gol
+            return 0;
+        }
 
+        int maxGrade = roundedGrades[0];// Initializam variabila maxGrade cu prima nota din array-ul rotunjit
+        for (int grade : roundedGrades) {
+            if (grade > maxGrade) {// Daca intalnim o nota mai mare decat maxGrade actualizam maxGrade
+                maxGrade = grade;
+            }
+        }
+        return maxGrade;
+    }
 
+    // Testare metode
+    public static void main(String[] args) {
+        // Cream un array de note
+        int[] grades = {29, 37, 38, 41, 84, 67};
+
+        // Instanțiem clasa
+        Aufgabe1 gradingSystem = new Aufgabe1(grades);
+
+        // 1.Afisare note insuficiente
+        System.out.print("Note insuficiente: ");
+        int[] failingGrades = gradingSystem.note_insuficiente();
+        for (int grade : failingGrades) {
+            System.out.print(grade + " ");
+        }
+        System.out.println();
+
+        // 2.Afisare media notelor
+        System.out.println("Media notelor: " + gradingSystem.medie());
+
+        // 3.Afisare note rotunjite
+        System.out.print("Note rotunjite: ");
+        int[] roundedGrades = gradingSystem.rotunjire();
+        for (int grade : roundedGrades) {
+            System.out.print(grade + " ");
+        }
+        System.out.println();
+
+        // 4.Afisare nota maxima rotunjita
+        System.out.println("Nota maxima rotunjita: " + gradingSystem.maxim_rotunjit());
+    }
 }

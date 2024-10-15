@@ -59,4 +59,31 @@ public class Aufgabe4 {
         return maxSpent;
     }
 
+    // Testare metode
+    public static void main(String[] args) {
+        Aufgabe4 shopping = new Aufgabe4();
+
+        int[] keyboards1 = {40, 35, 70, 15, 45};
+        int[] keyboards2 = {15, 20, 10, 35};
+        int[] usbDrives = {20, 15, 40, 15};
+        int[] prices = {15, 45, 20};
+        int[] keyboards3 = {40, 50, 60};
+        int[] usbDrives3 = {8, 12};
+
+        int budget1 = 30;
+        int budget2 = 60;
+
+        // 1.Gasim cea mai ieftina tastatura
+        System.out.println("Cea mai ieftina tastatura: " + shopping.cheap(keyboards1));
+
+        // 2.Gasim cel mai scump obiect dintre tastaturi si USB-uri
+        System.out.println("Cel mai scump obiect: " + shopping.expensive_obiect(keyboards2, usbDrives));
+
+        // 3.Gasim cel mai scump USB pe care Markus il poate cumpara in functie de buget
+        System.out.println("Cel mai scump USB in buget: " + shopping.buget_USB(prices, budget1));
+
+        // 4.Gasim suma maxima pe care Markus o poate cheltui pe o tastatura si un USB
+        System.out.println("Suma maxima cheltuita: " + shopping.buget_max(keyboards3, usbDrives3, budget2));
+    }
+
 }

@@ -28,4 +28,17 @@ public class Aufgabe4 {
         }
         return maxPrice;
     }
+
+    // 3.Metoda pt a gasi cel mai scump USB pe care Markus il poate cumpara in functie de buget
+    public int buget_USB(int[] usbDrives, int budget) {
+        int maxPrice = -1;// Initial presupunem ca nu poate cumpara nimic
+        // Parcurgem lista de USB-uri pt a gasi cel mai scump care se incadrează in buget
+        for (int price : usbDrives) {
+
+            if (price <= budget && price > maxPrice) {// Daca pretul este in buget si mai mare decat prețul maxim actual actualizam
+                maxPrice = price;
+            }
+        }
+        return maxPrice;
+    }
 }

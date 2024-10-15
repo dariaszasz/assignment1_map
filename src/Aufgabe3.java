@@ -24,4 +24,26 @@ public class Aufgabe3 {
 
         return result; // Returnam rezultatul complet cu carry daca exista
     }
+
+    // 2.Calcularea diferentei a doua numere mari
+    public int[] diff_big_numbers(int[] num1, int[] num2) {
+        int[] result = new int[num1.length];// Cream un array pentru rezultat
+        int borrow = 0; // Variabila pt imprumut
+
+        // Incepem de la ultima cifra
+        for (int i = num1.length - 1; i >= 0; i--) {
+            int diff = num1[i] - num2[i] - borrow; // Scadem cifra curenta si imprumutul
+            if (diff < 0) { // Daca diferenta este negativa
+                diff += 10; // Adaugam 10 pt a imprumuta de la urm cifra
+                borrow = 1; // Setam imprumutul la 1
+            } else {
+                borrow = 0; // Resetam imprumutul daca diferenta nu e negativa
+            }
+            result[i] = diff; // Stocam diferenta calculata
+        }
+
+        return result;
+    }
+
+
 }

@@ -85,5 +85,50 @@ public class Aufgabe3 {
         return result;
     }
 
+    // Teste pt metodele de mai sus
+    public static void main(String[] args) {
+        Aufgabe3 operations = new Aufgabe3();
+
+        int[] num1 = {1, 3, 0, 0, 0, 0, 0, 0, 0};
+        int[] num2 = {8, 7, 0, 0, 0, 0, 0, 0, 0};
+        int multiplier = 2; // Cifra pt inmultire
+        int divisor = 2; // Cifra pt impartire
+
+        // 1. Adunare
+        int[] sumResult = operations.add_big_numbers(num1, num2);
+        System.out.print("Suma: ");
+        for (int digit : sumResult) {
+            System.out.print(digit);
+        }
+        System.out.println();
+
+        // 2. Scadere
+        int[] num3 = {8, 3, 0, 0, 0, 0, 0, 0, 0};
+        int[] num4 = {5, 4, 0, 0, 0, 0, 0, 0, 0};
+        int[] subResult = operations.diff_big_numbers(num3, num4);
+        System.out.print("Diferenta: ");
+        for (int digit : subResult) {
+            System.out.print(digit);
+        }
+        System.out.println();
+
+        // 3. Inmultire
+        int[] num5 = {2, 3, 6, 0, 0, 0, 0, 0, 0}; // Numărul pentru înmulțire
+        int[] multResult = operations.multiply_big_numbers(num5, multiplier);
+        System.out.print("Multiplicarea: ");
+        for (int digit : multResult) {
+            System.out.print(digit);
+        }
+        System.out.println();
+
+        // 4. Impartire
+        int[] divResult = operations.divide_big_numbers(num5, divisor);
+        System.out.print("Impartirea: ");
+        for (int digit : divResult) {
+            System.out.print(digit);
+        }
+        System.out.println();
+    }
+
 
 }

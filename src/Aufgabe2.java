@@ -54,6 +54,23 @@ public class Aufgabe2 {
         return sum - max;
     }
 
+    // Testarea metodelor
+    public static void main(String[] args) {
+        int[] numbers = {4, 8, 3, 10, 17};
 
+        Aufgabe2 analysis = new Aufgabe2(numbers);
+
+        // 1. Afisarea numarului maxim
+        System.out.println("Numarul maxim: " + analysis.max_nr());
+
+        // 2. Afisarea numarului minim
+        System.out.println("Numarul minim: " + analysis.min_nr());
+
+        // 3. Afisarea sumei maxime
+        System.out.println("Suma maxima a n-1 numere: " + analysis.max_sum());
+
+        // 4. Afisarea sumei minime
+        System.out.println("Suma minima a n-1 numere: " + analysis.min_sum());
+    }
 
 }

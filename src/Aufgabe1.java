@@ -43,4 +43,25 @@ public class Aufgabe1{
         // Math.round() rotunjește rezultatul la 2 zecimale (multiplicam si impartim cu 100.0)
     }
 
+    // 3. Metoda pt obținerea notelor rotunjite
+    public int[] rotunjire() {
+        int[] roundedGrades = new int[grades.length];// Crearea unui nou array pt a stoca notele rotunjite
+        for (int i = 0; i < grades.length; i++) {// Parcurgem fiecare nota din array-ul original
+            int grade = grades[i];// Extragem nota curenta
+            // Verificam daca nota poate fi rotunjita
+            if (grade >= 38 && (grade % 5) >= 3) {// nota trebuie să fie de cel puțin 38
+                                                    //diferenta dintre nota curenta si urm multiplu de 5 trb să fie mai micam de 3
+
+                // Daca ambele conditii sunt indeplinite rotunjim nota la urm multiplu de 5
+                // Calculam urm multiplu de 5 prin adaugarea diferentei
+                roundedGrades[i] = grade + (5 - grade % 5);
+            } else {
+                roundedGrades[i] = grade;// Daca nu se indeplinesc conditiile se pastreaza nota originala
+            }
+        }
+        return roundedGrades;
+    }
+
+
+
 }

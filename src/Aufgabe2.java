@@ -17,6 +17,17 @@ public class Aufgabe2 {
         return max;
     }
 
+    // 2.Metoda pt gasirea numarului minim
+    public int min_nr() {
+        int min = numbers[0]; // Se alege primul numar ca fiind cel mai mic
+        for (int num : numbers) {
+            if (num < min) {
+                min = num;
+            }
+        }
+        return min;
+    }
+
 
 
 }

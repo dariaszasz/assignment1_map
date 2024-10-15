@@ -29,7 +29,7 @@ public class Aufgabe2 {
     }
 
     // 3.Metoda pt gasirea sumei maxima a n-1 numere
-    public int findMaxSum() {
+    public int max_sum() {
         int sum = 0;
         int min = min_nr(); // Gasirea numarului cel mai mic folosind metoda de mai sus
 
@@ -39,6 +39,19 @@ public class Aufgabe2 {
 
         // Suma maxima = Suma totala - cel mai mic numar
         return sum - min;
+    }
+
+    // 4.Methoda pt calcularea sumei minime a n-1 numere
+    public int min_sum() {
+        int sum = 0;
+        int max = max_nr(); // Gasirea numarului maxim folosind metoda de mai sus
+
+        for (int num : numbers) {
+            sum += num;
+        }
+
+        // Suma minima = Suma totala - nr maxim
+        return sum - max;
     }
 
 

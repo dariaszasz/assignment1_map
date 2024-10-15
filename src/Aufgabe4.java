@@ -41,4 +41,22 @@ public class Aufgabe4 {
         }
         return maxPrice;
     }
+
+    // 4.Metoda pt a gasi suma maxima pe care Markus o poate cheltui pe o tastatura si un USB
+    public int buget_max(int[] keyboards, int[] usbDrives, int budget) {
+        int maxSpent = -1;// Initial presupunem ca nu poate cumpara nimic
+
+        // Parcurgem toate combinatiile de tastaturi si USB-uri
+        for (int keyboardPrice : keyboards) {
+            for (int usbPrice : usbDrives) {
+                // Calculam suma totala pentru o tastatura și un USB
+                int total = keyboardPrice + usbPrice;
+                if (total <= budget && total > maxSpent) {// Daca suma totala este in buget si mai mare decat suma maxima actuala o actualizam
+                    maxSpent = total;
+                }
+            }
+        }
+        return maxSpent;
+    }
+
 }
